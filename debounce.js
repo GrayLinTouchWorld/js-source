@@ -21,4 +21,3 @@ const debounce = (fn, wait = 1000, leading = true) => {
 // }
 
 // window.addEventListener('scroll',debounce(handlescroll))
-

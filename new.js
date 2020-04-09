@@ -12,7 +12,6 @@ function myNew(Con){
     return res instanceof Object ? res : obj
 }
 
-
 // function Test(name, age) {
 //     this.name = name
 //     this.age = age

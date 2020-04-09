@@ -1,3 +1,4 @@
+//1.简易版本
 //遍历拷贝
 function deepClone(target, cache = new WeakMap()){
     //若target为空或者常量则直接返回
@@ -27,3 +28,29 @@ let a = {
 let b = deepClone(a);
 console.log(b)
 
+
+//2.
+function checkedType(target){
+    //检测数据类型
+    return Object.prototype.toString.call(target).slice(8, -1);
+}
+function dClone(target){
+    let result, targetType = checkedType(target);
+    if(targetType === 'Object'){
+        result = {};
+    }else if(targetType === 'Array'){
+        result = [];
+    }else{
+        return target;
+    }
+
+    for(let i in target){
+        let value = target[i];
+        if(checkedType(value) === 'Object' || targetType === 'Array'){
+            result[i] = dClone(value);
+        }else{
+            result[i] = value;
+        }
+    }
+    return result;
+}
