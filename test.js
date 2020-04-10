@@ -1,45 +1,21 @@
-const express = require('./myExpress')
+const Koa = require('./myKoa2');
+const app = new Koa();
 
-const app = express()
-
-app.use((req, res, next) => {
-    console.log('请求开始。。。', req.method, req.url)
-    next()
+app.use(async (ctx, next) => {
+    await next();
+    const rt = ctx['X-Response-Time'];
+    console.log(`${ctx.req.method}  ${ctx.req.url} -- ${rt}`);
 })
 
-app.use((req, res, next) => {
-    console.log('处理cookie...')
-    req.cookie = {
-        userId: 'abc123'
-    }
-    next()
+app.use(async (ctx, next) => {
+    const start = Date.now();
+    await next();
+    const ms = Date.now() - start;
+    ctx['X-Response-Time'] = `${ms}ms`;
 })
 
-app.use('/api', (req, res, next) => {
-    console.log('处理 /api 路由')
-    next()
+app.use(async ctx => {
+    ctx.res.end('this is koa2')
 })
 
-app.get('/api', (req, res, next) => {
-    console.log('get /api 路由')
-    next()
-})
-
-function loginCheck(req, res, next) {
-    setTimeout(() => {
-        console.log('模拟登陆')
-        next()
-    })
-}
-
-app.get('/api/get-cookie', loginCheck, (req, res, next) => {
-    console.log('get /api/get-cookie')
-    res.json({
-        errno: 0,
-        data: req.cookie
-    })
-})
-
-app.listen(8000, () => {
-    console.log('server running...') 
-})
+app.listen(8000);
