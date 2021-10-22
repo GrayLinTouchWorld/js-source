@@ -30,8 +30,12 @@ function myNew(Con){
 Object.mycreate = function(proto, properties) {
     function F() {};
     F.prototype = proto;
+    let f = new F();
     if(properties) {
-        Object.defineProperties(F, properties);
+        Object.defineProperties(f, properties);
     }
-    return new F();
+    return f;
 }
+
+// var hh = Object.mycreate({a: 11}, {mm: {value: 10}});
+// console.log(hh);

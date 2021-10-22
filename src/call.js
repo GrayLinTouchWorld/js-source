@@ -9,10 +9,6 @@ Function.prototype.myCall = function(context){
     delete context[fn];
 }
 
-
-
-
-
 // function Person(name, sex){
 //     this.name = name;
 //     this.sex = sex;

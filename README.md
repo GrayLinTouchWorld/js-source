@@ -11,4 +11,9 @@ JavaScript常用api实现收录
 - 手写promise方法 --- promiseA+.js
 - 简单实现Koa2洋葱圈模型原理 --- myKoa2.js
 - 简单实现express框架原理 --- myExpress.js
-- 手写深拷贝函数 --- deepclone.js 
+- 手写深拷贝函数 --- deepclone.js
+
+2021.10.22
+- 数组去重方法 --- deduplicate.js
+- 数组扁平化 --- flat.js
+- 手写Array.prototype.filter函数 --- fliter.js

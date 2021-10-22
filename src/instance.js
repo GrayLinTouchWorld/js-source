@@ -7,3 +7,14 @@ function myInstance(left, right){
         leftValue = leftValue.__proto__
     }
 }
+
+// function parent() {
+
+// }
+
+// function person (){
+
+// }
+
+// console.log(myInstance(person, parent))
+// console.log(myInstance(person, Object))

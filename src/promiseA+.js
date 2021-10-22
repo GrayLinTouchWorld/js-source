@@ -5,6 +5,7 @@ class Promise{
     this.reason = undefined;
     this.onResolvedCallbacks = [];
     this.onRejectedCallbacks = [];
+
     let resolve = value => {
       if (this.state === 'pending') {
         this.state = 'fulfilled';
