@@ -5,9 +5,14 @@
 // 构造函数如果返回值为对象，那么这个返回值会被正常使用
 
 function myNew(Con){
-    let obj = {}
     let arg = [...arguments].slice(1);
-    Object.setPrototypeOf(obj, Con.prototype); //等同于 obj.__proto__ = Con.prototype
+
+    //效率比较低
+    // let obj = {}
+    // Object.setPrototypeOf(obj, Con.prototype); //等同于 obj.__proto__ = Con.prototype
+
+    let obj = Object.create(Con.prototype)
+    
     let res = Con.apply(obj, arg);
     return res instanceof Object ? res : obj
 }
@@ -15,14 +20,14 @@ function myNew(Con){
 // function Test(name, age) {
 //     this.name = name
 //     this.age = age
-//   }
-//   Test.prototype.sayName = function () {
-//       console.log(this.name)
-//   }
-//   const a = myNew(Test, 'yck', 26)
-//   console.log(a.name) // 'yck'
-//   console.log(a.age) // 26
-//   a.sayName() // 'yck'
+// }
+// Test.prototype.sayName = function () {
+//     console.log(this.name)
+// }
+// const a = myNew(Test, 'yck', 26)
+// console.log(a.name) // 'yck'
+// console.log(a.age) // 26
+// a.sayName() // 'yck'
 
 
 

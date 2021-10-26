@@ -17,3 +17,7 @@ JavaScript常用api实现收录
 - 数组去重方法 --- deduplicate.js
 - 数组扁平化 --- flat.js
 - 手写Array.prototype.filter函数 --- fliter.js
+
+2021.10.26
+- 函数柯里化 --- curry.js
+- 排序算法 --- sort(持续更新)
