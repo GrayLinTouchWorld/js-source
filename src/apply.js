@@ -9,7 +9,7 @@
 //     return res;
 // }
 
-Function.prototype.myApply = function(context = window, args){
+Function.prototype.myApply = function(context = window, args = []){
     if(typeof this != 'function'){
         throw new TypeError()
     }
@@ -17,11 +17,7 @@ Function.prototype.myApply = function(context = window, args){
     let fn = Symbol(context)
     context[fn] = this;
     let res;
-    if(args){
-        res = context[fn](...args)
-    }else{
-        res = context[fn]()
-    }
+    res = context[fn](...args)
     delete context[fn]
 
     return res;
@@ -29,10 +25,10 @@ Function.prototype.myApply = function(context = window, args){
 
 let obj = {name:'gary'}
 
-function sayName(name,a){
-    console.log(this.name, name,a)
+function sayName(){
+    console.log(this.name)
 }
 
-sayName.myApply(obj, ['lin', 'a'])
+sayName.myApply(obj, )
 
 
