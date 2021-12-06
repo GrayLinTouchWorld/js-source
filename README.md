@@ -24,3 +24,7 @@ JavaScript常用api实现收录
 
 2021.10.28
 - LRU缓存实现 --- LRU.js
+
+2021.12.06
+- 常用工具方法 --- /utils (持续更新)
+- 千分符 --- /utils/thousandsFormat.js

@@ -1,26 +1,49 @@
-function curry(fn){
-    const preArgs = [].slice.call(arguments,1)
-
-    function curried(...args){
-        const allArgs = [...preArgs, ...args]
-        return curry.call(null, fn, ...allArgs)
+function format1(d){
+    d = d.toString().split('.')
+    let arr = d[0].split('').reverse();
+    let res = []
+    for(let i = 0; i < arr.length;i++){
+        if(i % 3 == 0 && i != 0){
+            res.push(',')
+        }
+        res.push(arr[i])
     }
-
-    curried.toString = () =>{
-        console.log(preArgs)
-        return fn.apply(this, preArgs)
+    res.reverse();
+    if(d[1]){
+        res = res.join("").concat('.'+d[1])
+    }else{
+        res =  res.join("")
     }
-
-    return curried;
-}
-  
-
-function dynamicAdd() {
-    return [...arguments].reduce((prev, curr) => {
-        return prev + curr
-    }, 0)
+    return res;
 }
 
-var add = curry(dynamicAdd);
-let d = add(1)(2)(3,4)
-alert(d)
+function format2(num){
+    if(num > 1000){
+        let d1 = num.toString().split('.')[0];
+        let d2 = num.toString().split('.')[1];
+        let res = ''
+        while(d1.length > 3){
+            res = ',' + d1.slice(-3) + res;
+            d1 = d1.slice(0, d1.length-3);
+        }
+
+        if(d1) res = d1+res;
+        return res+'.'+d2;
+    }
+    return num;
+}
+
+function format3(num){
+    return num.toString().replace(/\d+/, function(n){
+        return n.replace(/(\d)(?=(\d{3})+$)/g,function(m){
+            return m + ','
+        })
+    })
+}
+
+function format4(num){
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+let a = 93213299.321
+console.log(format4(a))
