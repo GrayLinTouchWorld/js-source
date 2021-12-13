@@ -20,7 +20,7 @@ JavaScript常用api实现收录
 
 2021.10.26
 - 函数柯里化 --- curry.js
-- 排序算法 --- sort(持续更新)
+- 排序算法 --- /sort(持续更新)
 
 2021.10.28
 - LRU缓存实现 --- LRU.js
@@ -28,3 +28,6 @@ JavaScript常用api实现收录
 2021.12.06
 - 常用工具方法 --- /utils (持续更新)
 - 千分符 --- /utils/thousandsFormat.js
+
+2021.12.13
+- 排序算法(新增归并排序) --- /sort
