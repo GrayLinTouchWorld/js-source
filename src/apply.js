@@ -29,6 +29,6 @@ function sayName(){
     console.log(this.name)
 }
 
-sayName.myApply(obj, )
+sayName.myApply(obj)
 
 

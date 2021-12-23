@@ -30,7 +30,7 @@ function thousandsFormat2(num){
     }
 
     if(d1) res = d1+res;
-    return res+'.'+d2
+    return res+( d2 ? '.'+d2 : '')
   }
   return num
 }
@@ -48,5 +48,5 @@ function thousandsFormat4(num){
 }
 
 
-// let a = 323213121
-// console.log(thousandsFormat4(a))
+let a = 1000
+console.log(thousandsFormat4(a))
