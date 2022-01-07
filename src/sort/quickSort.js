@@ -1,5 +1,6 @@
 //快速排序
-//时间复杂度 O(nlog2n)
+//最好时间复杂度 O(nlogn) 
+//最坏时间复杂度 O(n^2)
 //空间复杂度 O(logn)
 
 function quickSort(arr, left = 0, right = arr.length-1){

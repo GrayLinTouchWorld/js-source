@@ -1,4 +1,6 @@
 //归并排序
+//时间复杂度 O(nlogn)
+//空间复杂度 O(n)
 
 function mergeSort(arr, left = 0, right=arr.length){
   if(arr.length < 2) return arr;

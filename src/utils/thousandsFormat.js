@@ -48,5 +48,5 @@ function thousandsFormat4(num){
 }
 
 
-let a = 1000
+let a = 1000.000
 console.log(thousandsFormat4(a))
