@@ -10,13 +10,14 @@ Array.prototype.filter = function(callback, thisArg){
     const O = Object(this),
         len = this.length >>> 0, //>>>0 保证len为number，且为正整数
         res = []
-        for(let i = 0; i < len; i++){
-            if(i in O){
-                if(callback.call(thisArg, O[i], i, O)){
-                    res.push(O[i])
-                }
+
+    for(let i = 0; i < len; i++){
+        if(i in O){
+            if(callback.call(thisArg, O[i], i, O)){
+                res.push(O[i])
             }
         }
+    }
     return res;
 }
 

@@ -35,5 +35,8 @@ JavaScript常用api实现收录
 2021.12.23
 - 排序算法(新增堆排序) --- /sort
 
-2022.02.11
+2022.01.11
 - 手写async/await --- generatorToasync.js
+
+2022.02.15
+- 手写reduce --- reduce.js

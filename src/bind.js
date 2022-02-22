@@ -24,6 +24,8 @@ if(!Function.prototype.bind){
             };
 
         //构建noop
+        //构建noop作为中介是为了避免实例通过__proto__修改Foo原型上的属性，虽然通过__proto__.__proto__也可以访问到
+        //https://blog.csdn.net/weixin_45494904/article/details/108202657
         noop.prototype = fn.prototype;
         bindFn.prototype = new noop(); 
         

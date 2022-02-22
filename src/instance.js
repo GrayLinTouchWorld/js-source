@@ -1,6 +1,7 @@
 function myInstance(left, right){
+    let type = typeof left
     // 类型检测
-    if(typeof left === 'object' || typeof left === 'function' || left === null){
+    if((type === 'object' && left !== null) || type === 'function' ){
         leftValue = left.__proto__;
         rightValue = right.prototype;
         while(true){
@@ -21,5 +22,5 @@ function person (){
 }
 
 console.log(myInstance(person, parent))
-console.log(myInstance(person, Object))
+console.log(myInstance(null, Object))
 
