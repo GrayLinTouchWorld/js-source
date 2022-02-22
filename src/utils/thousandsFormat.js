@@ -36,7 +36,7 @@ function thousandsFormat2(num){
 }
 
 function thousandsFormat3(num){
-  return num.toString().replace(/d+/, function(n){
+  return num.toString().replace(/\d+/, function(n){
     return n.replace(/(\d)(?=(\d{3})+$)/g,function(m){
       return m+','  
     })

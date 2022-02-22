@@ -40,3 +40,6 @@ JavaScript常用api实现收录
 
 2022.02.15
 - 手写reduce --- reduce.js
+
+2022.02.22
+- 手写EventBus --- /utils/EventBus.js
