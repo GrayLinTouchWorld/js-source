@@ -66,6 +66,7 @@ function getInit(obj){
 //克隆Symbol
 function cloneSymbol(targe) {
     return Object(Symbol.prototype.valueOf.call(targe));
+    //return Symbol(target.description)
 }
 
 //克隆正则

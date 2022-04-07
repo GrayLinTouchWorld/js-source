@@ -43,3 +43,6 @@ JavaScript常用api实现收录
 
 2022.02.22
 - 手写EventBus --- /utils/EventBus.js
+
+2022.03.01
+- 手写trim --- /trim.js
